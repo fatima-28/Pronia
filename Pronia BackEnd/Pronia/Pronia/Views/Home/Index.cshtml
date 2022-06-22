@@ -1,0 +1,105 @@
+﻿@using Pronia.Models
+@using Pronia.ViewModels
+@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- main start -->
+<main>
+
+
+    <!-- slide section start -->
+    <section class="slide">
+        <div class="main-background">
+            <div class="summary-photo ">
+                <div class="inner-summary">
+                    <p class="precent">65% off</p>
+                    <p class="title">New plant</p>
+                    <p class="inner-summary">Pronia, With 100% Natural, Organic & Plant Shop.</p>
+                    <button class="discover">DISCOVER NOW</button>
+                </div>
+
+                <div class="images "><img src="~/assets/img/flower1.png" alt="flower photo"></div>
+            </div>
+            <div class="summary-photo ">
+                <div class="inner-summary">
+                    <p class="precent">65% off</p>
+                    <p class="title">New plant</p>
+                    <p class="inner-summary">Pronia, With 100% Natural, Organic & Plant Shop.</p>
+                    <button class="discover">DISCOVER NOW</button>
+                </div>
+                <div class="images"><img src="~/assets/img/flower2.png" alt="flower photo"></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- slide section end -->
+    <!-- futures section start -->
+    <section id="futures">
+        <div class="futures">
+
+            @foreach (var future in Model.Futures)
+            {
+                <!-- futures single item start -->
+                <div class="futures-item">
+                    <div class="logo-future"><i class="@future.Logo"></i></div>
+                    <div class="text-future">
+                        <p class="futures-title">@future.Title</p>
+                        <p class="futures-description">@future.Description</p>
+                    </div>
+                </div>
+                <!-- futures single item end -->
+
+            }
+        </div>
+    </section>
+    <!-- futures section end -->
+    <!-- our product section start -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="categories">
+            <div class="categories-item active">
+                <p>Featured</p>
+            </div>
+            <div class="categories-item">
+                <p>Bestseller</p>
+            </div>
+            <div class="categories-item">
+                <p>Leatest</p>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var product in Model.Products)
+            {
+                <!-- product single item start -->
+                <div class="products-item ">
+                    <div class="inner-products-item product-image">
+                        <img src="~/assets/img/@product.Image" alt="cactuses">
+                    </div>
+                    <div class="inner-products-item product-name">@product.Name</div>
+                    <div class="inner-products-item product-price">$@product.Price</div>
+                    <div class="inner-products-item product-stars">
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- product single item end -->
+
+
+            }
+
+        </div>
+    </section>
+    <!-- our product section end -->
+
+
+</main>
+<!-- main end -->
